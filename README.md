@@ -7,4 +7,4 @@ This project was developed to create a simple password generator. It allows the 
 You can run the application by clicking this <a href="https://ghassanalassadi.github.io/password-generator/">link</a>.
 
 <h2>Screenshot</h2>
-<img src="assets/image.png">
+<img src="Assets/image.png">

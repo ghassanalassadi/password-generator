@@ -4,7 +4,7 @@
 This project was developed to create a simple password generator. It allows the user to select what types of characters they desire (be it special, numeric, lower or upper case) and then generate the password based on the desired length that the user can input. A tool such as this can help users generate secure passwords, while also meeting the password requirements laid out when creating accounts with banks, social media and vice versa. Thanks to this project, I learned more about how to program in JavaScript.
 
 <h2>How to Run the Application</h2>
-You can run the application by clicking this link.
+You can run the application by clicking this <a href="https://ghassanalassadi.github.io/password-generator/">link</a>.
 
 <h2>Screenshot</h2>
 <img src="assets/image.png">

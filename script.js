@@ -1,103 +1,14 @@
-//Array of special chartacters
-var specialArray = [
-  '@',
-  '%',
-  '+',
-  '\\',
-  '/',
-  "'",
-  '!',
-  '#',
-  '$',
-  '^',
-  '?',
-  ':',
-  ',',
-  ')',
-  '(',
-  '}',
-  '{',
-  ']',
-  '[',
-  '~',
-  '-',
-  '_',
-  '.'
-];
+// Array of special characters
+var specialArray = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
 
 // Array of numeric characters 
-var numericArray = [
-  '0',
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9'
-];
+var numericArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9' ];
 
 // Array of lowercase characters 
-var lowerCasedArray = [
-  'a',
-  'b',
-  'c',
-  'd',
-  'e',
-  'f',
-  'g',
-  'h',
-  'i',
-  'j',
-  'k',
-  'l',
-  'm',
-  'n',
-  'o',
-  'p',
-  'q',
-  'r',
-  's',
-  't',
-  'u',
-  'v',
-  'w',
-  'x',
-  'y',
-  'z'
-];
+var lowerCasedArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ];
 
 // Array of uppercase characters 
-var upperCasedArray = [
-  'A',
-  'B',
-  'C',
-  'D',
-  'E',
-  'F',
-  'G',
-  'H',
-  'I',
-  'J',
-  'K',
-  'L',
-  'M',
-  'N',
-  'O',
-  'P',
-  'Q',
-  'R',
-  'S',
-  'T',
-  'U',
-  'V',
-  'W',
-  'X',
-  'Y',
-  'Z'
-];
+var upperCasedArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
 
 // concatenate all arrays for easy access and convert them to string
 
@@ -133,22 +44,29 @@ function writePassword() {
   function generatePassword() {
     // Password criteria prompts
     var passVal = "";
-    var specialCheck = confirm("Would you like special characters in your password?");
-    var numericCheck = confirm("Would you like numeric characters in your password?");
-    var lowerCasedCheck = confirm("Would you like lower case characters in your password?");
-    var upperCasedCheck = confirm("Would you like upper case characters in your password?");
+    var specialCheck = confirm("Would you like special characters in your password?"); // checks if special chars are desired
+    var numericCheck = confirm("Would you like numeric characters in your password?"); // checks if numerical chars are desired
+    var lowerCasedCheck = confirm("Would you like lower case characters in your password?"); // checks if lower case chars are desired
+    var upperCasedCheck = confirm("Would you like upper case characters in your password?"); // checks if upper case chars are desired
 
     // Password length (must be min of 8 characters, max 128 characters)
     // Input must not be a non-numerical character
     // Keep prompting user if they enter undesirable inputs
     while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength) == true) {
       var passwordLength = prompt("Please enter the desired length of your password (between 8 and 128):");
-      if (passwordLength < 8) {
+      // break out of loop if user cancels
+      if (passwordLength === null || passwordLength === "") {
+        break;
+      }
+      // prompt again if value is less than 8
+      else if (passwordLength < 8) {
         alert("Please enter a higher value.");
       }
+      // prompt again if value is greater than 128
       else if (passwordLength > 128) {
         alert("Please enter a lower value.")
       }
+      // prompt again if user enters non-numerical value
       else if (isNaN(passwordLength) == true) {
         alert("Please enter a number between 8 and 128.")
       }
